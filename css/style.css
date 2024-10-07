@@ -28,11 +28,16 @@
 
 /* COLOR VARIABLES */
 :root {
-  --main-bg-color: #101010; /* Fondo principal */
-  --text-color-light: #f5f5f5; /* Color de texto claro */
-  --secondary-bg-color: #c1c7d0; /* Fondo secundario */
-  --accent-color-light: #df9fa4; /* Color de acento claro */
-  --accent-color-dark: #5d3c4c; /* Color de acento oscuro */
+  --main-bg-color: #101010;
+  /* Fondo principal */
+  --text-color-light: #f5f5f5;
+  /* Color de texto claro */
+  --secondary-bg-color: #c1c7d0;
+  /* Fondo secundario */
+  --accent-color-light: #df9fa4;
+  /* Color de acento claro */
+  --accent-color-dark: #5d3c4c;
+  /* Color de acento oscuro */
 }
 
 /*-------------------- DEFAULT STYLING FOR THE WEBSITE --------------------*/
@@ -50,7 +55,8 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  background: var(--main-bg-color); /* Utilizando la variable de color */
+  background: var(--main-bg-color);
+  /* Utilizando la variable de color */
   user-select: none;
   overflow-x: hidden;
 }
@@ -80,9 +86,12 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  background: var(--secondary-bg-color); /* Fondo optimizado con variable */
-  color: var(--text-color-light); /* Color de texto optimizado */
-  font-size: 1.25rem; /* Ajuste de tamaño de fuente con rem */
+  background: var(--secondary-bg-color);
+  /* Fondo optimizado con variable */
+  color: var(--text-color-light);
+  /* Color de texto optimizado */
+  font-size: 1.25rem;
+  /* Ajuste de tamaño de fuente con rem */
   font-family: 'Montserrat', sans-serif;
   z-index: 10;
   display: flex;
@@ -92,11 +101,13 @@ li {
 }
 
 .loader-text-stroke {
-  -webkit-text-stroke: 1px var(--highlight-color, #000000); /* Uso de variable de color */
+  -webkit-text-stroke: 1px var(--highlight-color, #000000);
+  /* Uso de variable de color */
   color: transparent;
   position: relative;
   pointer-events: none;
-  font-size: 4rem; /* Cambio a rem para mejor escalabilidad */
+  font-size: 4rem;
+  /* Cambio a rem para mejor escalabilidad */
   text-align: center;
   font-family: 'Monument', sans-serif;
   z-index: 5;
@@ -114,15 +125,19 @@ li {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  font-size: inherit; /* Inherita tamaño de texto del padre */
+  font-size: inherit;
+  /* Inherita tamaño de texto del padre */
   text-align: center;
   font-family: inherit;
   z-index: 5;
   font-weight: inherit;
-  color: var(--highlight-color, #000000); /* Uso de variable de color */
+  color: var(--highlight-color, #000000);
+  /* Uso de variable de color */
   overflow: hidden;
-  -webkit-text-stroke: 0; /* No es necesario el valor de color al estar en 0 */
-  animation: loadertext 15s cubic-bezier(0.84, 0, 0.08, 0.99) 1; /* Optimizado con shorthand */
+  -webkit-text-stroke: 0;
+  /* No es necesario el valor de color al estar en 0 */
+  animation: loadertext 15s cubic-bezier(0.84, 0, 0.08, 0.99) 1;
+  /* Optimizado con shorthand */
 }
 
 
@@ -158,7 +173,8 @@ li {
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background: var(--breaker-bg-color, #97b1c5); /* Color más oscuro para mayor contraste */
+  background: var(--breaker-bg-color, #97b1c5);
+  /* Color más oscuro para mayor contraste */
   position: fixed;
   display: none;
   z-index: 10;
@@ -501,19 +517,19 @@ li {
 #home .swiper-pagination {
   position: absolute;
   left: auto;
-  right: 0%;
+  right: 0;
   bottom: 0;
   width: auto;
   display: inline;
-  font-family: montserrat;
+  font-family: 'Montserrat', sans-serif;
   color: #000000;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 1.5rem;
   padding: 20px 30px 20px 30px;
 }
 
 #home .swiper-pagination .swiper-pagination-current {
-  font-size: 150%;
+  font-size: 1.8rem;
 }
 
 /* SWIPER PAGINATION */
@@ -921,7 +937,7 @@ form #message {
   #home .image-type {
     font-size: 8vw;
     /* Tamaño adaptable a la pantalla */
-    top: 80%;
+    top: 70%;
     /* Mueve el texto más hacia abajo */
     left: 50%;
     transform: translateX(-50%);
@@ -945,15 +961,21 @@ form #message {
     position: relative;
   }
 
-  #home .img-container img {
+  #home .img-container {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(0.9);
-    transition: all 1s ease;
-    border-radius: 15px;
+    max-width: 90vw;
+    height: auto;
+    max-height: 85vh;
+    /* Reduce el máximo de altura */
+    margin: 0 auto;
+    position: relative;
+    top: -30px;
+    /* Ajusta el valor según lo que prefieras */
   }
 
+  .logo {
+    font-size: 23px;
+  }
 
 }
 
@@ -1088,10 +1110,7 @@ form #message {
     font-size: 18px;
   }
 
-  .cursor,
-  .cursor-two {
-    display: none;
-  }
+
 
   .loader-text-stroke {
     font-size: 6vw;
@@ -1180,13 +1199,18 @@ form #message {
   }
 
   .image-selector {
-    padding: 60px 10px 10px 10px;
+    padding: 90px 10px 10px 15px;
   }
 
   .image-selector a {
-    font-size: 15px;
-    margin: 5px;
+    font-size: 16px;
+    /* Reduce el tamaño de la fuente */
+    margin: 1px;
+    /* Reduce el margen */
+    padding: 5px 5px;
+    /* Reduce el padding */
   }
+
 
   .gallery-images-container {
     padding-top: 170px;
