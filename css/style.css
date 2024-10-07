@@ -48,17 +48,15 @@
   box-sizing: border-box;
 }
 
-html {
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden; /* Evita el scroll vertical */
   scroll-behavior: smooth;
-}
-
-body {
+  background: var(--main-bg-color); /* Utilizando la variable de color */
+  user-select: none;
   width: 100%;
   min-height: 100vh;
-  background: var(--main-bg-color);
-  /* Utilizando la variable de color */
-  user-select: none;
-  overflow-x: hidden;
 }
 
 a {
