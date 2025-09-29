@@ -74,39 +74,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // GALLERY PAGE SLIDER
 
-new Swiper(" .swiper-container", {
-  slidesPerView: "auto",
-  speed: 1000,
-  spaceBetween: 20,
-  centeredSlides: true,
-  grabCursor: true,
-  on: {
-    init: function () {
-      let swiper = this;
-      for (let i = 0; i < swiper.slides.length; i++) {
-        $(swiper.slides[i])
-          .find(".img-container")
-          .attr({
-            "data-swiper-parallax": 1 * swiper.width,
-          });
-      }
+if (document.querySelector(".swiper-container")) {
+  new Swiper(" .swiper-container", {
+    slidesPerView: "auto",
+    speed: 1000,
+    spaceBetween: 20,
+    centeredSlides: true,
+    grabCursor: true,
+    on: {
+      init: function () {
+        let swiper = this;
+        for (let i = 0; i < swiper.slides.length; i++) {
+          $(swiper.slides[i])
+            .find(".img-container")
+            .attr({
+              "data-swiper-parallax": 1 * swiper.width,
+            });
+        }
+      },
+      resize: function () {
+        this.update();
+      },
     },
-    resize: function () {
-      this.update();
+    autoplay: {
+      delay: 8000,
+      disableOnInteraction: true,
     },
-  },
-  autoplay: {
-    delay: 8000,
-    disableOnInteraction: true,
-  },
-  pagination: {
-    el: "#home .swiper-pagination",
-    type: "fraction",
-  },
-  mousewheel: true,
-  observer: true,
-  observeParents: true,
-});
+    pagination: {
+      el: "#home .swiper-pagination",
+      type: "fraction",
+    },
+    mousewheel: true,
+    observer: true,
+    observeParents: true,
+  });
+}
 // SLIDER ON GALLERY PAGE
 
 $(document).ready(function () {
@@ -163,14 +165,15 @@ $(function () {
   // Asegurarnos de que haya enlaces y un breaker
   if ($links.length && $breaker.length) {
     $links.on("click", function (e) {
-      e.preventDefault(); // Prevenir el comportamiento predeterminado del enlace
-
-      const page = $(this).attr("href"); // Obtener el valor del href del enlace
-
-      // Asegurarnos de que la página de destino exista
-      if ($(page).length) {
-        displayBreaker($breaker); // Mostrar la animación del breaker
-        changePage(page, $links); // Cambiar el contenido de la página
+      const href = $(this).attr("href");
+      // Solo interceptamos si es navegación interna por ancla (#)
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+        const page = href;
+        if ($(page).length) {
+          displayBreaker($breaker);
+          changePage(page, $links);
+        }
       }
     });
   }

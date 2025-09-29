@@ -1,0 +1,176 @@
+/* ABOUT PAGE CSS */
+#about {
+    width: 100%;
+    height: auto;
+    display: none;
+    background: var(--contact-bg-color);
+    overflow: hidden;
+}
+
+/* Ensure header logo/menu have contrast on About's light background */
+#about .logo {
+    color: var(--text-color-dark);
+}
+
+#about .menu-bar {
+    color: var(--text-color-dark);
+}
+
+.about-main-contents {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    padding: 20px;
+}
+
+.about-main-contents .about-info {
+    width: 45%;
+    height: auto;
+    color: var(--text-color-dark);
+    font-size: 18px;
+    font-family: poppins;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    padding-left: 0;
+    padding-top: 50px;
+    position: relative;
+}
+
+.about-info .heading {
+    font-size: 38px;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.about-info .paragraph {
+    font-size: 16px;
+    padding: 20px;
+}
+
+.about-info .cv-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px;
+    margin-top: 15px;
+    font-size: 20px;
+    text-align: center;
+    border: 2px solid var(--text-color-light);
+    border-radius: 4px;
+    transition: all 0.4s ease;
+}
+
+.about-info .cv-button a:hover {
+    background: var(--primary-accent-color);
+    color: var(--text-color-light);
+}
+
+.about-main-contents .about-image {
+    width: 55%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-main-contents .about-image .about-img-container {
+    width: 450px;
+    height: 85vh;
+    position: relative;
+}
+
+.about-image .about-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transform: rotate(2deg);
+}
+
+.about-image .about-img-container .about-image-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--secondary-accent-color);
+    transform: rotate(-3deg);
+}
+
+/* Responsive (borrowed from original) */
+@media all and (max-width: 675px) {
+    .about-main-contents {
+        flex-direction: column;
+        padding-top: 100px;
+        align-items: center;
+    }
+
+    .about-main-contents .about-info {
+        width: 100%;
+        height: auto;
+        color: var(--primary-accent-color);
+        font-size: 18px;
+        font-family: poppins;
+        padding-left: 0px;
+        padding: 0px;
+        padding-top: 50px;
+        position: relative;
+    }
+
+    .about-info .heading {
+        font-size: 26px;
+        padding: 10px;
+    }
+
+    .about-info .paragraph {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .about-main-contents .about-image {
+        width: 100%;
+    }
+
+    .about-main-contents .about-image .about-img-container {
+        width: 90%;
+        height: 400px;
+        position: relative;
+    }
+
+    .about-info .cv-button a {
+        padding: 10px 20px;
+        margin: 10px;
+        margin-top: 15px;
+        font-size: 18px;
+    }
+}
+
+@media all and (min-width: 42.375rem) and (max-width: 59.375rem) {
+    .about-main-contents {
+        flex-direction: column;
+        padding-top: 6.25rem;
+        align-items: center;
+    }
+
+    .about-main-contents .about-info {
+        width: 100%;
+        color: var(--primary-accent-color);
+        font-size: 1.125rem;
+        padding-left: 1.25rem;
+    }
+
+    .about-info .heading {
+        font-size: 2rem;
+    }
+
+    .about-info .paragraph {
+        font-size: 1.125rem;
+    }
+
+    .about-main-contents .about-image .about-img-container {
+        width: 31.25rem;
+        height: auto;
+    }
+}
